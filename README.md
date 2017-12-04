@@ -1,7 +1,8 @@
 # CamTwist Effect Plugin to Convert Theta-S Live Video from Fisheye to Equirectangular via Quartz
 An experiment to use OS X Quartz Composer to transform Ricoh Theta S live feed dual fisheye to equirectangular.
 
-NOTE JUN 2016: Ricoh has since released native OS drivers to accomplish this: https://theta360.com/en/support/download/
+# Deprecated
+JUN 2016: Ricoh has since released native OS drivers to accomplish this: https://theta360.com/en/support/download/
 
 Goal is to create a Quartz composition that can be used in camtwist or other live video streaming software to adjust live the output of the theta-s to be suitable for using in a 360' web panorama plugin. The flow will be something like this:
 * Theta S via USB or HDMI > Computer
@@ -10,17 +11,16 @@ Goal is to create a Quartz composition that can be used in camtwist or other liv
 
 ## Current state - Proof of concept works
 * theta-fish2sphere.qtz - this "routes" camtwist through Paul Bourke's custom quartz patch project (see references below)
-
 * @kosso modified version added : theta-fish2sphere_K.qtz with reference images to play with. 
-
+* @justibro modified version with blended edges added : theta-fish2sphere_blending.qtz
 
 ### Reference Input Image
 
-!['Reference Input Image'](https://github.com/kosso/theta-s-quartz/blob/master/THETAS_DUALFISH_REF_1280_720.png?raw=true =600x)
+<img src="https://github.com/kosso/theta-s-quartz/blob/master/THETAS_DUALFISH_REF_1280_720.png?raw=true" alt="Reference Input Image" />
 
-##### Test Output Snapshot
+### Test Output Snapshot
 
-!['Example Output Image .. so far'](https://github.com/kosso/theta-s-quartz/blob/master/OUTPUT.png?raw=true =600x)
+<img src="https://github.com/kosso/theta-s-quartz/blob/master/OUTPUT.png?raw=true" alt="Example Output Image .. so far" />
 
 
 ### Example images: 
@@ -29,7 +29,7 @@ Goal is to create a Quartz composition that can be used in camtwist or other liv
 
 ## To use:
 * Download camtwist http://camtwiststudio.com/, install to applications
-* Add theta-fish2sphere.qtz and theta-crop.qtz to Applications > CamTwist > Effects
+* Add theta-fish2sphere.qtz (or other qtz files you want to try) to Applications > CamTwist > Effects
 * Open CamTwist
 * Step 1: View > Main Window, Double click "Webcam" and choose RICOH THETA S
 * Step 2: Choose filter theta-fish2sphere
